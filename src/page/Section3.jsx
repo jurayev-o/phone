@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import { React, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Carusel from "./Carsusel";
 

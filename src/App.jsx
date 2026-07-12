@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "./page/Card";
 import "./App.css";
@@ -8,6 +8,7 @@ import Footer from "./page/Footer";
 import NewModal from "./page/NewModal";
 import Section4 from "./page/Section4";
 import Section3 from "./page/Section3";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function App() {
   const [language, setLanguage] = useState("Uzb");
   const [modal, setModal] = useState(false);
@@ -214,6 +215,7 @@ function App() {
       },
     ],
   };
+
   const addToCart = (product) => {
     setCard((prevCard) => [...prevCard, product]);
   };
@@ -266,7 +268,11 @@ function App() {
   return (
     <div className="App">
       <div className="bg">
-        <nav>
+        <motion.nav
+          initial={{ y: -60, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <div className="div1">
             <a>Apple․</a>
             <select onChange={btn}>
@@ -301,7 +307,7 @@ function App() {
               {language === "Uzb" ? (
                 <input
                   type="text"
-                  placeholder="qidirish"
+                  placeholder="Qidirish"
                   value={searchTerm}
                   onKeyDown={handleKeyDown}
                   onChange={(e) => {
@@ -330,8 +336,14 @@ function App() {
             <div className="lenght">{card.length}</div>
             <img onClick={openModal} src="public/man.jpg" alt="" />
           </div>
-        </nav>
-        <section id="section1">
+        </motion.nav>
+
+        <motion.section
+          id="section1"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <AnimatePresence>
             {modal && (
               <Modal
@@ -345,8 +357,15 @@ function App() {
               />
             )}
           </AnimatePresence>
+
           <img src="public/ff90f430108482ac43f3a2bf43e5f5e8_l.jpg" alt="" />
-          <div className="absolute1">
+
+          <motion.div
+            className="absolute1"
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
             <h1>Iphone 16 pro Max</h1>
             {language === "Uzb" ? (
               <p>
@@ -369,35 +388,52 @@ function App() {
               }}
             >
               {language === "Uzb"
-                ? "Hozir Hardid Qiling"
+                ? "Hozir Harid Qiling"
                 : "делать покупки сейчас"}
             </button>
-          </div>
-          {language === "Uzb" ? (
-            <div className="absolute2">
-              <h3>Narxi:24 000 000 so'm</h3>
-              <p>
-                256 GB modeli: taxminan 20 639 000 so'mdan <br /> 24 000 000
-                so'mgacha.
-              </p>
-              <h4>
-                Rp 19 000 000 <i className="fa-regular fa-circle-right"></i>
-              </h4>
-            </div>
-          ) : (
-            <div className="absolute2">
-              <h3>Цена: 24 000 000 сум </h3>
-              <p>
-                Модель на 256 ГБ: примерно от 20 639 000 <br /> сум до 24 000
-                000 сум.
-              </p>
-              <h4>
-                Rp 19 000 000 <i className="fa-regular fa-circle-right"></i>
-              </h4>
-            </div>
-          )}
-        </section>
-        <section ref={secondSectionRef} id="section2">
+          </motion.div>
+
+          <motion.div
+            className="absolute2"
+            initial={{ x: 200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          >
+            {language === "Uzb" ? (
+              <>
+                <h3>Narxi:24 000 000 so'm</h3>
+                <p>
+                  256 GB modeli: taxminan 20 639 000 so'mdan <br /> 24 000
+                  000 so'mgacha.
+                </p>
+                <h4>
+                  Rp 19 000 000{" "}
+                  <i className="fa-regular fa-circle-right"></i>
+                </h4>
+              </>
+            ) : (
+              <>
+                <h3>Цена: 24 000 000 сум </h3>
+                <p>
+                  Модель на 256 ГБ: примерно от 20 639 000 <br /> сум до 24
+                  000 000 сум.
+                </p>
+                <h4>
+                  Rp 19 000 000{" "}
+                  <i className="fa-regular fa-circle-right"></i>
+                </h4>
+              </>
+            )}
+          </motion.div>
+        </motion.section>
+        <motion.section
+          ref={secondSectionRef}
+          id="section2"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="header">
             {language === "Uzb" ? (
               <h1>Bizning Mahsulotlar</h1>
@@ -413,23 +449,34 @@ function App() {
                   : "Ничего не найдено"}
               </p>
             ) : (
-              filteredData.map((product) => (
-                <div key={product.id}>
-                  <Card
-                    addToCart={addToCart}
-                    setCard={setCard}
-                    product={product}
-                    language={language}
-                    title={product.title}
-                    description={product.description}
-                    image={product.image}
-                    playAudio={playAudio}
-                  />
-                </div>
-              ))
+              filteredData.map((product, index) => {
+                const isLeft = Math.floor(index / 2) % 2 === 0;
+
+                return (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, x: isLeft ? -150 : 150 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                  >
+                    <Card
+                      addToCart={addToCart}
+                      setCard={setCard}
+                      product={product}
+                      language={language}
+                      title={product.title}
+                      description={product.description}
+                      image={product.image}
+                      playAudio={playAudio}
+                    />
+                  </motion.div>
+                );
+              })
             )}
           </div>
-        </section>
+        </motion.section>
+
         <Section3
           language={language}
           images={images}
@@ -445,7 +492,9 @@ function App() {
           handleCloseModal={handleCloseModal}
         />
         <Footer language={language} />
-        {newModal && <NewModal setNewModal={setNewModal} language={language} />}
+        {newModal && (
+          <NewModal setNewModal={setNewModal} language={language} />
+        )}
       </div>
     </div>
   );
