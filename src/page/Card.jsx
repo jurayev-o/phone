@@ -97,7 +97,6 @@ function Card({
   const shareTitle = `${title} - ${description}`;
   const shareMessage = `Mahsulot: ${shareTitle}\nNarxi: ${product.price}\n\n${description}`;
 
-  // public ichidagi rasmlar uchun
   const imgSrc = image?.startsWith("/")
     ? image
     : `/${image}`;

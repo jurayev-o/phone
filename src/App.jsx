@@ -33,7 +33,7 @@ function App() {
         id: 1,
         title: "Iphone11",
         description: "Ekran piksellar soni: 1792 x 828 piksellar",
-        image: "public/iphone11.png",
+        image: "/iphone11.png",
         price: 6000,
       },
       {
@@ -41,7 +41,7 @@ function App() {
         title: "Iphone12",
         description:
           "iPhone 12 6.1 dyuymli Super Retina XDR OLED ekran bilan jihozlangan",
-        image: "public/iphone12.png",
+        image: "/iphone12.png",
         price: 7000,
       },
       {
@@ -49,7 +49,7 @@ function App() {
         title: "Iphone13",
         description:
           "iPhone 13 6.1 dyuymli Super Retina XDR OLED ekran bilan jihozlangan.",
-        image: "public/iphone13.png",
+        image: "/iphone13.png",
         price: 7300,
       },
       {
@@ -57,7 +57,7 @@ function App() {
         title: "Iphone14",
         description:
           "iPhone 14 6.1 dyuymli Super Retina XDR OLED ekran bilan jihozlangan.",
-        image: "public/iphone14.png",
+        image: "/iphone14.png",
         price: 10000,
       },
       {
@@ -65,7 +65,7 @@ function App() {
         title: "Iphone11-pro-max",
         description:
           "iPhone 11 Pro Max 6.5 dyuymli OLED ekran bilan jihozlangan.",
-        image: "public/iphone11promax.png",
+        image: "/iphone11promax.png",
         price: 71000,
       },
       {
@@ -73,7 +73,7 @@ function App() {
         title: "Iphone12-pro-max",
         description:
           "iPhone 12 Pro Max 6.7 dyuymli XDR OLED ekran bilan jihozlangan.",
-        image: "public/iphone12promax.png",
+        image: "/iphone12promax.png",
         price: 800,
       },
       {
@@ -81,7 +81,7 @@ function App() {
         title: "Iphone13-pro-max",
         description:
           "iPhone 13 Pro Max 6.7 dyuymli XDR OLED ekran bilan jihozlangan.",
-        image: "public/iphon13promax.png",
+        image: "/iphon13promax.png",
         price: 9000,
       },
       {
@@ -89,7 +89,7 @@ function App() {
         title: "Iphone14-pro-max",
         description:
           "iPhone 14 Pro Max 6.7 dyuymli XDR OLED ekran bilan jihozlangan.",
-        image: "public/iphone14promax.png",
+        image: "/iphone14promax.png",
         price: 10000,
       },
       {
@@ -97,21 +97,21 @@ function App() {
         title: "Iphone16",
         description:
           "Ekran qoplamasi va yadro himoya qilish uchun shisha yoki plastik qoplama ishlatiladi.",
-        image: "public/iphone16.png",
+        image: "/iphone16.png",
         price: 18476,
       },
       {
         id: 10,
         title: "Iphone-se",
         description: "Ekran resolyutsiyasi: 1334 x 750 piksellar (326 ppi)",
-        image: "public/iphonece.png",
+        image: "/iphonece.png",
         price: 900,
       },
       {
         id: 12,
         title: "Iphone8-plus",
         description: "kran resolyutsiyasi: 1920 x 1080 piksellar (401 ppi)",
-        image: "public/iphone8plus.png",
+        image: "/iphone8plus.png",
         price: 1400,
       },
       {
@@ -119,7 +119,7 @@ function App() {
         title: "Iphone16-pro-max",
         description:
           "Ekran olchami: 6.9 dyuym (iPhone tarixidagi eng katta ekran)",
-        image: "public/iphone16promax.png",
+        image: "/iphone16promax.png",
         price: 2000,
       },
     ],
@@ -128,7 +128,7 @@ function App() {
         id: 1,
         title: "Iphone11",
         description: "Разрешение экрана: 1792 X 828 пикселей.",
-        image: "public/iphone11.png",
+        image: "/iphone11.png",
         price: 6000,
       },
       {
@@ -136,7 +136,7 @@ function App() {
         title: "Iphone12",
         description:
           "iPhone 12 оснащен 6,1-дюймовым OLED-экраном Super Retina XDR.",
-        image: "public/iphone12.png",
+        image: "/iphone12.png",
         price: 7000,
       },
       {
@@ -144,7 +144,7 @@ function App() {
         title: "Iphone13",
         description:
           "iPhone 13 оснащен 6,1-дюймовым OLED-экраном Super Retina XDR.",
-        image: "public/iphone13.png",
+        image: "/iphone13.png",
         price: 7300,
       },
       {
@@ -152,35 +152,35 @@ function App() {
         title: "Iphone14",
         description:
           "iPhone 14 оснащен 6,1-дюймовым OLED-экраном Super Retina XDR.",
-        image: "public/iphone14.png",
+        image: "/iphone14.png",
         price: 10000,
       },
       {
         id: 5,
         title: "Iphone11-pro-max",
         description: "iPhone 11 Pro Max оснащен 6,5-дюймовым OLED-экраном.",
-        image: "public/iphone11promax.png",
+        image: "/iphone11promax.png",
         price: 71000,
       },
       {
         id: 6,
         title: "Iphone12-pro-max",
         description: "iPhone 12 Pro Max оснащен 6,7-дюймовым OLED-экраном XDR.",
-        image: "public/iphone12promax.png",
+        image: "/iphone12promax.png",
         price: 800,
       },
       {
         id: 7,
         title: "Iphone13-pro-max",
         description: "iPhone 13 Pro Max оснащен 6,7-дюймовым OLED-экраном XDR.",
-        image: "public/iphon13promax.png",
+        image: "/iphon13promax.png",
         price: 900,
       },
       {
         id: 8,
         title: "Iphone14-pro-max",
         description: "iPhone 14 Pro Max оснащен 6,7-дюймовым OLED-экраном XDR.",
-        image: "public/iphone14promax.png",
+        image: "/iphone14promax.png",
         price: 1000,
       },
       {
@@ -188,21 +188,21 @@ function App() {
         title: "Iphone16",
         description:
           "Стеклянная или пластиковая крышка используется для покрытия экрана и защиты ядра.",
-        image: "public/iphone16.png",
+        image: "/iphone16.png",
         price: 18476,
       },
       {
         id: 10,
         title: "Iphone-se",
         description: "Разрешение экрана: 1334 x 750 пикселей (326 ppi)",
-        image: "public/iphonece.png",
+        image: "/iphonece.png",
         price: 900,
       },
       {
         id: 12,
         title: "Iphone8-plus",
         description: "разрешение касания: 1920 x 1080 пикселей (401 ppi)",
-        image: "public/iphone8plus.png",
+        image: "/iphone8plus.png",
         price: 1400,
       },
       {
@@ -210,7 +210,7 @@ function App() {
         title: "Iphone16-pro-max",
         description:
           "Размер экрана: 6,9 дюйма (самый большой экран в истории iPhone)",
-        image: "public/iphone16promax.png",
+        image: "/iphone16promax.png",
         price: 2000,
       },
     ],
@@ -500,4 +500,4 @@ function App() {
   );
 }
 
-export default App;``
+export default App; ``
