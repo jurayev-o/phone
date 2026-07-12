@@ -72,13 +72,17 @@
 // }
 // export default Card;
 
-
 import {
   FacebookShareButton,
   TwitterShareButton,
   TelegramShareButton,
 } from "react-share";
-import { FacebookIcon, TwitterIcon, TelegramIcon } from "react-share";
+
+import {
+  FacebookIcon,
+  TwitterIcon,
+  TelegramIcon,
+} from "react-share";
 
 function Card({
   addToCart,
@@ -89,15 +93,20 @@ function Card({
   product,
   playAudio,
 }) {
+
   const shareTitle = `${title} - ${description}`;
   const shareMessage = `Mahsulot: ${shareTitle}\nNarxi: ${product.price}\n\n${description}`;
 
-  // public ichidagi rasm yo'li
-  const imageUrl = image.startsWith("/") ? image : `/${image}`;
+  // public ichidagi rasmlar uchun
+  const imgSrc = image?.startsWith("/")
+    ? image
+    : `/${image}`;
 
   return (
     <div className="card">
+
       <div className="absolute3">
+
         <div>
           <button
             onClick={() => {
@@ -105,11 +114,15 @@ function Card({
               playAudio();
             }}
           >
-            {language === "Uzb" ? "Savatga qo'shish" : "Добавить в корзину"}
+            {language === "Uzb"
+              ? "Savatga qo'shish"
+              : "Добавить в корзину"}
           </button>
         </div>
 
+
         <div className="yuborish">
+
           <FacebookShareButton
             url={window.location.href}
             quote={shareMessage}
@@ -118,6 +131,7 @@ function Card({
             <FacebookIcon size={35} round />
           </FacebookShareButton>
 
+
           <TwitterShareButton
             url={window.location.href}
             title={shareMessage}
@@ -125,33 +139,51 @@ function Card({
             <TwitterIcon size={35} round />
           </TwitterShareButton>
 
+
           <TelegramShareButton
             url={window.location.href}
             title={shareMessage}
           >
             <TelegramIcon size={35} round />
           </TelegramShareButton>
+
         </div>
+
       </div>
 
+
       <img
-        src={imageUrl}
+        src={imgSrc}
         alt={title}
         className="card-img"
       />
 
+
       <div className="card-body">
+
         {language === "Uzb" ? (
-          <h3 className="card-title">Nomi: {title}</h3>
+          <h3 className="card-title">
+            Nomi: {title}
+          </h3>
         ) : (
-          <h3 className="card-title">Имя: {title}</h3>
+          <h3 className="card-title">
+            Имя: {title}
+          </h3>
         )}
 
-        <p className="card-description">{description}</p>
+
+        <p className="card-description">
+          {description}
+        </p>
+
+
         <p className="card-price">
           Narxi: {product.price} so'm
         </p>
+
+
       </div>
+
     </div>
   );
 }
