@@ -18,14 +18,14 @@ function App() {
   const [message, setMessage] = useState(false);
 
   const images = [
-    { src: "public/iphone14.png", caption: "Iphone14" },
-    { src: "public/iphone12promax.png", caption: "Iphone12-pro-max" },
-    { src: "public/iphone12.png", caption: "Iphone11" },
+    { src: "/iphone14.png", caption: "Iphone14" },
+    { src: "/iphone12promax.png", caption: "Iphone12-pro-max" },
+    { src: "/iphone12.png", caption: "Iphone11" },
   ];
   const cards = [
-    { title: "Ipad-Pro", image: "public/ipadpro.png" },
-    { title: "Ipad-mini", image: "public/ipadmini.webp" },
-    { title: "Ipad-Air", image: "public/ipadair.png" },
+    { title: "Ipad-Pro", image: "/ipadpro.png" },
+    { title: "Ipad-mini", image: "/ipadmini.webp" },
+    { title: "Ipad-Air", image: "/ipadair.png" },
   ];
   const cardData = {
     Uzb: [
@@ -238,7 +238,7 @@ function App() {
 
   const playAudio = () => {
     const audio = new Audio(
-      "public/music/bubble-pop-4-323580-[AudioTrimmer.com].mp3"
+      "/music/bubble-pop-4-323580-[AudioTrimmer.com].mp3"
     );
     audio.play();
   };
@@ -303,7 +303,7 @@ function App() {
               )}
             </AnimatePresence>
             <div className="input">
-              <img src="public/images.png" alt="" />
+              <img src="/images.png" alt="" />
               {language === "Uzb" ? (
                 <input
                   type="text"
@@ -334,7 +334,7 @@ function App() {
               }}
             ></i>
             <div className="lenght">{card.length}</div>
-            <img onClick={openModal} src="public/man.jpg" alt="" />
+            <img onClick={openModal} src="/man.jpg" alt="" />
           </div>
         </motion.nav>
 
@@ -358,7 +358,7 @@ function App() {
             )}
           </AnimatePresence>
 
-          <img src="public/ff90f430108482ac43f3a2bf43e5f5e8_l.jpg" alt="" />
+          <img src="/ff90f430108482ac43f3a2bf43e5f5e8_l.jpg" alt="" />
 
           <motion.div
             className="absolute1"
